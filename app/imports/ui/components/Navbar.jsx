@@ -16,8 +16,8 @@ const TopNavBar = () => {
         <FontAwesomeIcon icon={faBars} />
       </button>
 
-      <div className="text-md"><object type="image/svg+xml" width ="200px" height="35px" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object></div>
-      {/* <div className="text-xl">ASR Dashboard</div> */}
+      <div className="text-md" style={{float:"left", width:"50%"}}><object type="image/svg+xml" width ="200px" height="35px" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object></div>
+      <div className="text-xl" style={{left:"40%", width:"50%"}}>ASR Dashboard</div>
       {sidebarOpen && <Sidebar closeSidebar={toggleSidebar} />}
     </div>
   );
