@@ -18,7 +18,15 @@ const Login = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
     <div className="bg-white p-8 shadow-lg w-full max-w-md">
-      <h1 className="text-3xl font-bold mb-6 text-center">Hishab ASR</h1>
+
+      <div style={{width: "100%"}}>
+        <div style={{paddingLeft:"30px", width: "50%", height: "100px", float: "left"}}> 
+          <object type="image/svg+xml" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object>
+        </div>
+        <div style={{height: "100px", paddingTop:"30px", paddingRight:"20px"}}>
+          <p className="text-3xl font-bold mb-6 text-center">Hishab ASR</p> 
+        </div>
+      </div><br/>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="form-group">
           <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
