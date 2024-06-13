@@ -14,7 +14,7 @@ Meteor.startup(function() {
   }
   if(Meteor.users.find({}).count() === 0) {
     Accounts.createUser({
-      email: 'demo@hisaab.com',
+      email: 'demo@hishab.com',
       password: 'password123',
       profile: {
         name: 'Demo User'
