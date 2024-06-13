@@ -15,7 +15,8 @@ const TopNavBar = () => {
       <button onClick={toggleSidebar} className="text-xl">
         <FontAwesomeIcon icon={faBars} />
       </button>
-      <div className="text-xl"><object type="image/svg+xml" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object></div>
+
+      <div className="text-md"><object type="image/svg+xml" width ="200px" height="35px" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object></div>
       {/* <div className="text-xl">ASR Dashboard</div> */}
       {sidebarOpen && <Sidebar closeSidebar={toggleSidebar} />}
     </div>
