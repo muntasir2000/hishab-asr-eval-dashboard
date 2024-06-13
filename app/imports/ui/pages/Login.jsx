@@ -20,10 +20,10 @@ const Login = () => {
     <div className="bg-white p-8 shadow-lg w-full max-w-md">
 
       <div style={{width: "100%"}}>
-        <div style={{paddingLeft:"30px", width: "50%", height: "100px", float: "left"}}> 
+        <div style={{paddingLeft:"30px", width:"30%", height: "100px", float: "left"}}> 
           <object type="image/svg+xml" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object>
         </div>
-        <div style={{height: "100px", paddingTop:"30px", paddingRight:"20px"}}>
+        <div style={{height: "100px", paddingTop:"30px",paddingRight:"35px"}}>
           <p className="text-3xl font-bold mb-6 text-center">Hishab ASR</p> 
         </div>
       </div><br/>
