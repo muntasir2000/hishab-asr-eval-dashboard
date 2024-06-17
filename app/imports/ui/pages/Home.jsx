@@ -60,8 +60,8 @@ const Home = () => {
             </div>
             {item && 
             (<div className="w-full mr-3 flex gap-5">
-                <ASR name="Hisab ASR" transcripts={item.hishab_asr_transcripts} />
-                <ASR name="Keggle ASR" transcripts={item.kaggle_asr_transcripts} />
+                <ASR name="Hishab ASR" transcripts={item.hishab_asr_transcripts} />
+                <ASR name="Kaggle ASR" transcripts={item.kaggle_asr_transcripts} />
             </div>)
             }
             {

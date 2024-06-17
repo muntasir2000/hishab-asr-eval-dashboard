@@ -24,7 +24,7 @@ const Login = () => {
           <object type="image/svg+xml" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object>
         </div>
         <div style={{height: "100px", paddingTop:"30px",paddingRight:"35px"}}>
-          <p className="text-3xl font-bold mb-6 text-center">Hishab ASR</p> 
+          <p className="text-3xl font-bold mb-6 text-center">HISHAB</p> 
         </div>
       </div><br/>
       <form onSubmit={handleSubmit} className="space-y-6">

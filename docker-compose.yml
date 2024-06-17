@@ -7,22 +7,25 @@ services:
     volumes:
       - mongo-data:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: hishab
+      MONGO_INITDB_ROOT_PASSWORD: hPDrguiFn3tAGH9e8XzNR
+    ports:
+      - 19921:27017
   asrdashboard:
     depends_on:
       - mongodb
     platform: linux/x86_64
-    image: hisabasr:latest
+    # image: hisabasr:latest
     build:
       context: ./deploy
       dockerfile: Dockerfile
     ports:
       - 8085:3000
     environment:
-      - MONGO_URL=mongodb://root:example@mongodb:27017/asr?authSource=admin
-      - ROOT_URL=http://localhost:8085
-      - NODE_ENV=dev
+      - MONGO_URL=mongodb://hishab:hPDrguiFn3tAGH9e8XzNR@mongodb:27017/asr?authSource=admin
+      - ROOT_URL=https://asr-evaluation.hishab.io
+      - NODE_ENV=production
+      - PORT=3000
     networks:
       - hisabnet
 
