@@ -14,10 +14,10 @@ Meteor.startup(function() {
   }
   if(Meteor.users.find({}).count() === 0) {
     Accounts.createUser({
-      email: 'demo@hishab.com',
-      password: 'password123',
+      email: 'kddi@hishab.co',
+      password: 'hishab2024',
       profile: {
-        name: 'Demo User'
+        name: 'KDDI Evaluation User'
       }
     });
   }

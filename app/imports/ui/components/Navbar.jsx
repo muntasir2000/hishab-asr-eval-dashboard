@@ -17,7 +17,7 @@ const TopNavBar = () => {
       </button>
 
       <div className="text-md" style={{float:"left", width:"45%"}}><object type="image/svg+xml" width ="200px" height="30px" data="https://hishab.co/wp-content/themes/hishab/dist/images/logo.svg"></object></div>
-      <div className="text-xl" style={{width:"55%"}}>ASR Dashboard</div>
+      <div className="text-xl" style={{width:"55%"}}>ASR Evaluation Dashboard</div>
       {sidebarOpen && <Sidebar closeSidebar={toggleSidebar} />}
     </div>
   );
