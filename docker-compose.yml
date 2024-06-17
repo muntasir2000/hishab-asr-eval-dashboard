@@ -2,8 +2,6 @@ services:
   mongodb:
     image: mongo:latest
     container_name: hmongo
-    networks:
-      - hisabnet
     volumes:
       - mongo-data:/data/db
     environment:
@@ -15,7 +13,7 @@ services:
     depends_on:
       - mongodb
     platform: linux/x86_64
-    # image: hisabasr:latest
+    image: hisabasr:latest
     build:
       context: ./deploy
       dockerfile: Dockerfile
@@ -26,11 +24,8 @@ services:
       - ROOT_URL=https://asr-evaluation.hishab.io
       - NODE_ENV=production
       - PORT=3000
-    networks:
-      - hisabnet
 
-networks:
-  hisabnet:
+
 
 volumes:
   mongo-data:
