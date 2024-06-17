@@ -5,6 +5,28 @@ import {Meteor} from "meteor/meteor";
 import { Transcripts } from '../../api/transcripts';
 import { Tracker } from 'meteor/tracker';
 
+const Messages = ({selectedId}) => {
+    const [message, setMessage ] = useState(null);
+    useEffect(() => {
+        const subscription = Meteor.subscribe('transcripts.one', selectedId);
+        const computation = Tracker.autorun(() => {
+          if (subscription.ready()) {
+            setMessage(Transcripts.findOne(selectedId));
+          }
+        });
+    
+        return () => {
+          computation.stop();
+          subscription.stop();
+        };
+      }, [selectedId]);
+
+    return message ? (<div className="w-full mr-3 flex gap-5">
+        <ASR name="Hishab ASR" transcripts={message.hishab_asr_transcripts} />
+        <ASR name="Kaggle ASR" transcripts={message.kaggle_asr_transcripts} />
+    </div>): (<div></div>);
+}
+
 const Transcript = ({transcript}) => {
     return (
     <div className='p-3 border border-slate-700 flex-1 mb-2'>
@@ -50,14 +72,14 @@ const Home = () => {
     const handleSelection = (obj) => {
         setItem(obj)
     }
-    useEffect(()=> {
-        Tracker.autorun(function() {
-            if(item) {
-                setItem(Transcripts.findOne(item?._id));
-            }
+    // useEffect(()=> {
+    //     const track =Tracker.autorun(function() {
+    //         if(item) {
+    //             setItem(Transcripts.findOne(item?._id));
+    //         }
             
-        });
-    }, [item]);
+    //     });
+    // }, [item]);
     return (
         <div className='flex gap-3'>
             <div className="w-100 min-w-80 min-h-screen border-r-2">
@@ -67,12 +89,7 @@ const Home = () => {
                     </div>)}
                 <ItemList selected={item} items={transcripts} onSelect={handleSelection} />
             </div>
-            {
-                item && (<div className="w-full mr-3 flex gap-5">
-                    <ASR name="Hishab ASR" transcripts={item.hishab_asr_transcripts} />
-                    <ASR name="Kaggle ASR" transcripts={item.kaggle_asr_transcripts} />
-                </div>)
-            }
+            <Messages selectedId={item?._id}/>
             {
                 !item && (
                     <div className='flex flex-col m-auto justify-center text-center'><h4 className='text-2xl text-center'>Please select an item</h4></div>

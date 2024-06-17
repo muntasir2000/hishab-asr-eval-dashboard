@@ -6,3 +6,9 @@ Meteor
     const cursor = Transcripts.find({});
     return cursor;
 });
+
+
+Meteor.publish("transcripts.one", function(id) {
+    if(!id) this.ready();
+    return Transcripts.find({_id: id});
+})

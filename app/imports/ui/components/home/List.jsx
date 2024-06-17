@@ -62,7 +62,7 @@ const ListItem = ({ item,onSelect,selected }) => {
   }
   
   return (
-    <div className={`flex items-center bg-white mb-1 ${selected && selected._id === item._id ? 'bg-third': ''}`} >
+    <div className={`flex items-center bg-white mb-1 ${selected && selected._id == item._id ? 'bg-third': ''}`} >
       
       <div className="cursor-pointer ml-4 flex overflow-auto flex-col p-4" onClick={()=> onSelect(item)}>
         <div className="flex gap-2">
