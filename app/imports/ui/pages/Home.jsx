@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import ListItem from '../components/home/List';
 import { useTracker } from 'meteor/react-meteor-data';
 import {Meteor} from "meteor/meteor";
 import { Transcripts } from '../../api/transcripts';
+import { Tracker } from 'meteor/tracker';
 
 const Transcript = ({transcript}) => {
     return (
@@ -49,6 +50,14 @@ const Home = () => {
     const handleSelection = (obj) => {
         setItem(obj)
     }
+    useEffect(()=> {
+        Tracker.autorun(function() {
+            if(item) {
+                setItem(Transcripts.findOne(item?._id));
+            }
+            
+        });
+    }, [item]);
     return (
         <div className='flex gap-3'>
             <div className="w-100 min-w-80 min-h-screen border-r-2">
