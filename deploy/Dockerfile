@@ -16,6 +16,6 @@ RUN apt-get update && \
 WORKDIR app
 ADD app.tar.gz ./
 
-RUN cd bundle/programs/server && npm install
+RUN cd bundle/programs/server && npm install  --verbose
 
 CMD ["node", "bundle/main.js"]
