@@ -10,9 +10,8 @@ const FormatDate = (date) => {
 
 const DownloadAudio = async (filename, url) => {
     try {
-        url = '/somefilenae.wav';
         const tokens = url.split(".");
-        let extension = "mp3";
+        let extension = tokens[tokens.length-1];
         if(tokens.length === 2) {
             extension = tokens[tokens.length-1];
         }
